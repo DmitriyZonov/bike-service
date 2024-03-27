@@ -1,7 +1,8 @@
 package com.javarush.bikeservice.entities.bike_service_entities;
 
+import com.javarush.bikeservice.entities.Order;
 import com.javarush.bikeservice.entities.enums.BikeType;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Data;
 
 import java.time.Year;
@@ -29,4 +30,7 @@ public class Bike {
             inverseJoinColumns = @JoinColumn(name = "client_id", referencedColumnName = "client_id")
     )
     private Set<Client> owners;
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "bike_id")
+    private Set<Order> orders;
 }

@@ -1,7 +1,7 @@
 package com.javarush.bikeservice.entities.bike_service_entities;
 
 import com.javarush.bikeservice.entities.Order;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Data;
 
 import java.util.Set;
@@ -15,8 +15,8 @@ public class Client {
     @Column(name = "client_id")
     private Integer id;
     private String name;
-    @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "city")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "city_id")
     private City city;
     private String address;
     @Column(name = "phone_number")

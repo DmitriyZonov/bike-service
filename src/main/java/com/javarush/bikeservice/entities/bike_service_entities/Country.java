@@ -1,6 +1,6 @@
 package com.javarush.bikeservice.entities.bike_service_entities;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Data;
 
 @Entity

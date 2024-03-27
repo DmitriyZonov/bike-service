@@ -21,7 +21,7 @@ public class BrandRepository implements CrudRepository<Brand>{
     }
 
     @Override
-    public Integer save (@NotNull Brand brand) {
+    public Integer save(@NotNull Brand brand) {
         return jdbcTemplate.execute(
                 SAVE_OR_UPDATE_BRAND,
                 new SaveBrandPreparedStatementCallBack(brand));

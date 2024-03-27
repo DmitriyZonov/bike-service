@@ -1,7 +1,11 @@
 package com.javarush.bikeservice.entities.bike_service_entities;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
+
+import com.javarush.bikeservice.entities.Order;
 import lombok.Data;
+
+import java.util.Set;
 
 @Entity
 @Data
@@ -13,4 +17,7 @@ public class City {
     private String name;
     private String region;
     private String district;
+    @OneToMany
+    @JoinColumn(name = "city_id")
+    private Set<Client> clients;
 }

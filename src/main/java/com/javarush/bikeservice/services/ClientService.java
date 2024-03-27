@@ -6,6 +6,7 @@ import com.javarush.bikeservice.repositories.jpa_repositories.ClientRepository;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,6 +22,20 @@ public class ClientService {
     public List<Client> getAllClients() {
         return clRepo.findAll();
     }
+    public List<Client> getAllClientsWithOpenOrders() {
+        List<Client> clientsWithOpenOrders = new ArrayList<>();
+
+        for(Client client : clRepo.findAll()) {
+            if (!client.getOrders().isEmpty()) {
+                for(Order order : client.getOrders()) {
+                    if (order.getInWork()) {
+                        clientsWithOpenOrders.add(client);
+                    }
+                }
+            }
+        }
+        return clientsWithOpenOrders;
+    }
     public Client findByOrder (@NotNull Order order) {
         return order.getClient();
     }
@@ -35,7 +50,7 @@ public class ClientService {
         }
         return client;
     }
-    public void saveClient(@NotNull Client client) {
+    public void addOrUpdateClient(@NotNull Client client) {
         clRepo.save(client);
     }
     public void deleteById(Integer id) {

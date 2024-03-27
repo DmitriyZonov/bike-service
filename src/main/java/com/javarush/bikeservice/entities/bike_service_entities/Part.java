@@ -1,7 +1,7 @@
 package com.javarush.bikeservice.entities.bike_service_entities;
 
 import com.javarush.bikeservice.entities.enums.Location;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Data;
 
 @Entity
@@ -17,7 +17,11 @@ public class Part {
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "brand")
     private Brand brand;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "work_name")
+    private Work work;
     @Column(name = "available_in_stock")
     private Boolean isAvailableInStock;
     private Integer price;
+
 }
