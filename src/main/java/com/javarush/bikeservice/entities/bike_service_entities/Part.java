@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(schema = "bike_service", name = "parts")
+@Table(schema = "bike_service", name = "bike_parts")
 public class Part {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,7 +18,7 @@ public class Part {
     @JoinColumn(name = "brand")
     private Brand brand;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "work_name")
+    @JoinColumn(name = "work_id")
     private Work work;
     @Column(name = "available_in_stock")
     private Boolean isAvailableInStock;

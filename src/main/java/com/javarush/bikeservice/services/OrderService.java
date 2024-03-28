@@ -30,7 +30,7 @@ public class OrderService {
         }
         return ordersInProgress;
     }
-    public List<Order> findAllClosedOrders() {
+    public List<Order> getAllClosedOrders() {
         List<Order> closedOrders = new ArrayList<>();
         for(Order order : orderRepo.findAll()) {
             if (!order.getInWork()) {

@@ -13,13 +13,15 @@ import java.util.Set;
 @Table(schema = "bike_service", name = "works")
 public class Work {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private String name;
     private Integer price;
     @Enumerated(EnumType.ORDINAL)
     private Location location;
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "order_work",
-            joinColumns = @JoinColumn(name = "work_name", referencedColumnName = "name"),
+            joinColumns = @JoinColumn(name = "work_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "order_id", referencedColumnName = "order_id")
     )
     private Set<Order> orders;

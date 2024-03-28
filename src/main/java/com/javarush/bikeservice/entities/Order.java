@@ -36,7 +36,7 @@ public class Order {
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "order_work",
             joinColumns = @JoinColumn(name = "order_id", referencedColumnName = "order_id"),
-            inverseJoinColumns = @JoinColumn(name = "work_name", referencedColumnName = "name")
+            inverseJoinColumns = @JoinColumn(name = "work_id", referencedColumnName = "id")
     )
     private Set<Work> works;
     public Order(Client client, Bike bike) {

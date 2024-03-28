@@ -34,7 +34,7 @@ public class CityService {
 
     }
     public List<Client> getAllClientsFromCity(@NotNull City city) {
-        return city.getClients().stream().toList();
+        return new ArrayList<>(city.getClients());
     }
     public List<Order> getAllOrdersFromCity(@NotNull City city) {
         List<Order> orders = new ArrayList<>();
