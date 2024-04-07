@@ -3,7 +3,7 @@ package com.javarush.bikeservice.services;
 import com.javarush.bikeservice.entities.Order;
 import com.javarush.bikeservice.entities.bike_service_entities.Part;
 import com.javarush.bikeservice.entities.bike_service_entities.Work;
-import com.javarush.bikeservice.repositories.jpa_repositories.PartRepository;
+import com.javarush.bikeservice.repositories.PartRepository;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
 
@@ -55,7 +55,7 @@ public class PartService {
         }
         return neededParts;
     }
-    public Part findById(Integer id) {
+    public Part findById(Long id) {
         Optional<Part> optional = partRepo.findById(id);
         Part part;
         if(optional.isPresent()) {
@@ -68,7 +68,7 @@ public class PartService {
     public void addOrUpdatePart(@NotNull Part part) {
         partRepo.save(part);
     }
-    public void deleteById(Integer id) {
+    public void deleteById(Long id) {
         Optional<Part> optional = partRepo.findById(id);
 
         if(optional.isPresent()) {

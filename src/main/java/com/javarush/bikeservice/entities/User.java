@@ -1,28 +1,27 @@
-package com.javarush.bikeservice.entities.bike_service_entities;
+package com.javarush.bikeservice.entities;
 
 import lombok.*;
 import org.hibernate.proxy.HibernateProxy;
 
 import javax.persistence.*;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
+@Table(name = "users")
 @Getter
 @Setter
 @RequiredArgsConstructor
-@Table(schema = "bike_service", name = "bike_parts")
-public class Part {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String brand;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "work_id")
-    private Work work;
-    @Column(name = "available_in_stock")
-    private Boolean isAvailableInStock;
-    private Integer price;
+    private String password;
+    @Transient
+    private String confirmPassword;
+    @ManyToMany(fetch = FetchType.EAGER)
+    private Set<Role> roles;
 
     @Override
     public final boolean equals(Object o) {
@@ -31,8 +30,8 @@ public class Part {
         Class<?> oEffectiveClass = o instanceof HibernateProxy ? ((HibernateProxy) o).getHibernateLazyInitializer().getPersistentClass() : o.getClass();
         Class<?> thisEffectiveClass = this instanceof HibernateProxy ? ((HibernateProxy) this).getHibernateLazyInitializer().getPersistentClass() : this.getClass();
         if (thisEffectiveClass != oEffectiveClass) return false;
-        Part part = (Part) o;
-        return getId() != null && Objects.equals(getId(), part.getId());
+        User user = (User) o;
+        return getId() != null && Objects.equals(getId(), user.getId());
     }
 
     @Override

@@ -2,7 +2,7 @@ package com.javarush.bikeservice.services;
 
 import com.javarush.bikeservice.entities.Order;
 import com.javarush.bikeservice.entities.bike_service_entities.Bike;
-import com.javarush.bikeservice.repositories.jpa_repositories.BikeRepository;
+import com.javarush.bikeservice.repositories.BikeRepository;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
 
@@ -37,7 +37,7 @@ public class BikeService {
     public Bike findByOrder (@NotNull Order order) {
         return order.getBike();
     }
-    public Bike findById (Integer id) {
+    public Bike findById (Long id) {
         Optional<Bike> optional = bikeRepo.findById(id);
         Bike bike;
         if(optional.isPresent()) {
@@ -50,7 +50,7 @@ public class BikeService {
     public void addOrUpdateBike(@NotNull Bike bike) {
         bikeRepo.save(bike);
     }
-    public void deleteById(Integer id) {
+    public void deleteById(Long id) {
         Optional<Bike> optional = bikeRepo.findById(id);
 
         if(optional.isPresent()) {

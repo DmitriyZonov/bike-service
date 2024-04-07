@@ -2,7 +2,7 @@ package com.javarush.bikeservice.services;
 
 import com.javarush.bikeservice.entities.Order;
 import com.javarush.bikeservice.entities.bike_service_entities.Work;
-import com.javarush.bikeservice.repositories.jpa_repositories.WorkRepository;
+import com.javarush.bikeservice.repositories.WorkRepository;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
 

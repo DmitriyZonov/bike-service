@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>Pricing example for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../css/editor.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link th:href="@{/../static/css/index.css}" rel="stylesheet">
+</head>
+
+<body>
+<div class="bg-img">
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-gradient box-shadow" style="height: 50px;margin-bottom: 16px;padding: 16px 24px; font-weight: normal">
+    <a th:href="@{/admin/orders/ordersinprogress}" class="btn btn-outline-primary" style="display: block; position: static; font-weight: normal; line-height: 24px; width: 162px; height: 38px; padding: 6px 8px; border-style: solid;border-width: 1px;border-color: #2D5772; color: white; background-color: #2D5772; text-decoration-color: white; min-width: auto; min-height: auto">Вход для персонала</a>
+</div>
+    <br>
+<div class="container" style="background-color: #649ec0; opacity: 85%; border-radius: 20px; box-shadow: 1px 1px 50px #000;">
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center" style="width: 800px; height: 221px; max-width: 700px; padding: 14px;">
+    <h1 class="display-4"><b>Добро пожаловать!</b></h1>
+    <p class="lead" ><b>Рады приветствовать Вас на нашем портале по ремонту велосипедов!<br>Мы знаем о них все и даже немного больше!</b></p>
+</div>
+</div>
+
+<div class="container-fluid p-5">
+    <div class="row m-auto text-center w-75">
+
+        <div class="col-4 princing-item green">
+            <div class="pricing-divider ">
+                <h3 class="text-light">Впервые у нас?</h3>
+                <h4 class="my-0 display-4 text-light font-weight-normal mb-3"><span class="h5">Зарегистрируйтесь, чтобы</span></h4>
+                <svg class='pricing-divider-img' enable-background='new 0 0 300 100' height='100px' id='Layer_1' preserveAspectRatio='none' version='1.1' viewBox='0 0 300 100' width='300px' x='0px' xml:space='preserve' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+          <path class='deco-layer deco-layer--1' d='M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
+	c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z' fill='#FFFFFF' opacity='0.6'></path>
+                    <path class='deco-layer deco-layer--2' d='M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
+	c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z' fill='#FFFFFF' opacity='0.6'></path>
+                    <path class='deco-layer deco-layer--3' d='M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
+	H42.401L43.415,98.342z' fill='#FFFFFF' opacity='0.7'></path>
+                    <path class='deco-layer deco-layer--4' d='M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
+	c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z' fill='#FFFFFF'></path>
+        </svg>
+            </div>
+            <div class="card-body bg-white mt-0 shadow">
+                <ul class="list-unstyled mb-5 position-relative">
+                    <li><b>Получить</b> бесплатную диагностику велосипеда </li>
+                    <li></li>
+                    <li><b>Иметь доступ </b>к поддержке в мессенджерах</li>
+                    <li><b>Иметь возможность </b>отследить статус выполнения работ</li>
+                </ul>
+                <button type="button" class="btn btn-lg btn-block btn-custom-green">Регистрация</button>
+            </div>
+        </div>
+
+
+
+
+        <div class="col-4 princing-item blue">
+            <div class="pricing-divider ">
+                <h3 class="text-light">Уже зарегистрированы?</h3>
+                <h4 class="my-0 display-4 text-light font-weight-normal mb-3"><span class="h5">Перейти в клиентский раздел, чтобы</span></h4>
+                <svg class='pricing-divider-img' enable-background='new 0 0 300 100' height='100px' id='Layer_1' preserveAspectRatio='none' version='1.1' viewBox='0 0 300 100' width='300px' x='0px' xml:space='preserve' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+          <path class='deco-layer deco-layer--1' d='M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
+	c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z' fill='#FFFFFF' opacity='0.6'></path>
+                    <path class='deco-layer deco-layer--2' d='M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
+	c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z' fill='#FFFFFF' opacity='0.6'></path>
+                    <path class='deco-layer deco-layer--3' d='M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
+	H42.401L43.415,98.342z' fill='#FFFFFF' opacity='0.7'></path>
+                    <path class='deco-layer deco-layer--4' d='M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
+	c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z' fill='#FFFFFF'></path>
+        </svg>
+            </div>
+
+            <div class="card-body bg-white mt-0 shadow">
+                <ul class="list-unstyled mb-5 position-relative">
+                    <li><b>Оформить </b>новую заявку</li>
+                    <li><b>Узнать </b>статус Вашего заказа</li>
+                    <li><b>Получить </b>консультацию службы поддержки в мессенджерах</li>
+                </ul>
+                <a th:href="@{/login}" class="btn btn-lg btn-block btn-custom-blue">Перейти</a>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="col-4 princing-item red">
+            <div class="pricing-divider ">
+                <h3 class="text-light">Не хотите регистрироваться?</h3>
+                <h4 class="my-0 display-4 text-light font-weight-normal mb-3"><span class="h3"></span><span class="h5">Оформите заказ без регистрации и:</span></h4>
+                <svg class='pricing-divider-img' enable-background='new 0 0 300 100' height='100px' id='Layer_1' preserveAspectRatio='none' version='1.1' viewBox='0 0 300 100' width='300px' x='0px' xml:space='preserve' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+          <path class='deco-layer deco-layer--1' d='M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729
+	c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z' fill='#FFFFFF' opacity='0.6'></path>
+                    <path class='deco-layer deco-layer--2' d='M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729
+	c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z' fill='#FFFFFF' opacity='0.6'></path>
+                    <path class='deco-layer deco-layer--3' d='M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716
+	H42.401L43.415,98.342z' fill='#FFFFFF' opacity='0.7'></path>
+                    <path class='deco-layer deco-layer--4' d='M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428
+	c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z' fill='#FFFFFF'></path>
+        </svg>
+            </div>
+
+            <div class="card-body bg-white mt-0 shadow">
+                <ul class="list-unstyled mb-5 position-relative">
+                    <li><b>Без </b>возможности получать бесплатные консультации</li>
+                    <li><b>Без </b>доступа к просмотру статуса заказа</li>
+                    <li><b>С платной</b> диагностикой</li>
+                </ul>
+                <button type="button" class="btn btn-lg btn-block btn-custom-red">Перейти</button>
+            </div>
+        </div>
+
+
+
+
+
+
+    </div>
+</div>
+</div>
+
+</body>
+</html>

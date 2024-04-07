@@ -6,6 +6,7 @@ import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 import static com.javarush.bikeservice.constants.ExceptionConstants.STAFF_NOT_FOUND_EXCEPTION;
 import static java.util.Objects.isNull;
@@ -35,23 +36,22 @@ public class StaffService {
         }
         return staff;
     }
-    public Staff findStaffById(Integer id) {
-        Staff staff = stRepo.findById(id);
+    public Staff findStaffById(Long id) {
+        Optional<Staff> staff = stRepo.findById(id);
 
-        if(!isNull(staff)) {
-            return staff;
+        if(staff.isPresent()) {
+            return staff.get();
         } else {
             throw new NullPointerException(STAFF_NOT_FOUND_EXCEPTION);
         }
     }
-    public void addNewStaff(@NotNull Staff staff) {
+    public void save(@NotNull Staff staff) {
         stRepo.save(staff);
     }
-    public void updateStaff(@NotNull Staff staff) {
-        stRepo.update(staff);
-    }
-    public void deleteStaffById(Integer id) {
-        if(!isNull(stRepo.findById(id))) {
+
+    public void deleteStaffById(Long id) {
+        Optional<Staff> staff = stRepo.findById(id);
+        if(staff.isPresent()) {
             stRepo.deleteById(id);
         } else {
             throw new NullPointerException(STAFF_NOT_FOUND_EXCEPTION);
